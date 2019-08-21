@@ -61,12 +61,10 @@ void Student::AddCourseCompletionDays(int completionDaysIn) {
 }
 
 void Student::SetDegreeProgram() {
-   degreeProgram = SOFTWARE;
 }
 
 Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age,
                  int daysInCourse1, int daysInCourse2, int daysInCourse3, degree degreeProgram) {
-   cout << "custom cusntructor called";
    SetStudentID(studentID);
    SetFirstName(firstName);
    SetLastName(lastName);
@@ -77,16 +75,8 @@ Student::Student(string studentID, string firstName, string lastName, string ema
    AddCourseCompletionDays(daysInCourse3);
 }
 
-void Student::Print() {
-
-}
-
-int Student::GetDegreeProgram() {
-   return degreeProgram;
-}
 
 Student::Student() {
-
 }
 
 Student::~Student() {

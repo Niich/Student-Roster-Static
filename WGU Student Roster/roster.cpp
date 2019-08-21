@@ -42,7 +42,7 @@ int main() {
       string tmpStudentID, tmpFirstName, tmpLastName, tmpEmailAddress;
       int tmpAge = 0;
       vector<int> numDaysCompleteCourse;
-      degree tmpDegree = SOFTWARE;
+      degree tmpDegree = NONE;
       istringstream inSS;
       string itemHolder;
       int postition = 0;
@@ -136,49 +136,22 @@ void Roster::Add(string studentID, string firstName, string lastName, string ema
    switch (degreeProgram) {
    case 0:
       //SoftwareStudent
-      classRosterArray[arrayLocation] = new SoftwareStudent;
-      classRosterArray[arrayLocation]->SetStudentID(studentID);
-      classRosterArray[arrayLocation]->SetFirstName(firstName);
-      classRosterArray[arrayLocation]->SetLastName(lastName);
-      classRosterArray[arrayLocation]->SetEmailAddress(emailAddress);
-      classRosterArray[arrayLocation]->SetAge(age);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse1);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse2);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse3);
-      classRosterArray[arrayLocation]->SetDegreeProgram();
-      //Student(studentID, firstName, firstName, firstName, age, daysInCourse1, daysInCourse3, daysInCourse3, degreeProgram);
+      classRosterArray[arrayLocation] = new SoftwareStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
       break;
    case 1:
       //SecurityStudent
-      classRosterArray[arrayLocation] = new SecurityStudent;
-      classRosterArray[arrayLocation]->SetStudentID(studentID);
-      classRosterArray[arrayLocation]->SetFirstName(firstName);
-      classRosterArray[arrayLocation]->SetLastName(lastName);
-      classRosterArray[arrayLocation]->SetEmailAddress(emailAddress);
-      classRosterArray[arrayLocation]->SetAge(age);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse1);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse2);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse3);
-      classRosterArray[arrayLocation]->SetDegreeProgram();
+      classRosterArray[arrayLocation] = new SecurityStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
       break;
    case 2:
       //NetworkStudent
-      classRosterArray[arrayLocation] = new NetworkStudent;
-      classRosterArray[arrayLocation]->SetStudentID(studentID);
-      classRosterArray[arrayLocation]->SetFirstName(firstName);
-      classRosterArray[arrayLocation]->SetLastName(lastName);
-      classRosterArray[arrayLocation]->SetEmailAddress(emailAddress);
-      classRosterArray[arrayLocation]->SetAge(age);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse1);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse2);
-      classRosterArray[arrayLocation]->AddCourseCompletionDays(daysInCourse3);
-      classRosterArray[arrayLocation]->SetDegreeProgram();
+      classRosterArray[arrayLocation] = new NetworkStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
       break;
    default:
       cout << "not a valid degree program" << endl;
       break;
    }
-   //SoftwareStudent firstStudent(studentID,firstName,firstName,firstName,age,daysInCourse1,daysInCourse3,daysInCourse3,degreeProgram);
+   
+   
 
 }
 
@@ -295,10 +268,7 @@ void Roster::PrintInvalidEmails() {
       }
       else { // this will trigger is 0 charToFind were found
          cout << email << "\tis not a valid email. no " << charToFind << " found" << endl;
-      }
-
-      //FIXME: check for .
-
+      }      
    }
 }
 

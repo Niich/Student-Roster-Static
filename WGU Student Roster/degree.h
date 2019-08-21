@@ -4,7 +4,8 @@
 enum degree {
    SOFTWARE = 0,
    SECURITY = 1,
-   NETWORKING = 2
+   NETWORKING = 2,
+   NONE = 99
 };
 
 #endif

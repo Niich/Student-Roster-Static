@@ -34,7 +34,7 @@ NetworkStudent::NetworkStudent() {
 }
 
 NetworkStudent::NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse3, int daysInCourse2, degree degreeProgram)
-   : Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse3, daysInCourse2, degreeProgram) {
+   :Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse3, daysInCourse2, degreeProgram) {
    SetDegreeProgram();
 }
 

@@ -17,7 +17,7 @@ private:
    string emailAddress;
    int age = 0;
    vector<int> numDaysCompleteCourse;
-   degree degreeProgram;
+   degree degreeProgram = NONE;
 public:
    //getter functions
    string GetStudentID();
@@ -38,8 +38,8 @@ public:
 
 
    //virtual functions
-   virtual void Print();
-   virtual int GetDegreeProgram();
+   virtual void Print() = 0;
+   virtual int GetDegreeProgram() = 0;
 
    //constructors and destructors
    Student();
