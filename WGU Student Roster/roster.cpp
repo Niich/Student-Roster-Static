@@ -26,12 +26,12 @@ const string studentData[] = {
 int main() {
 
    // Print my info
-   cout << "Course: Scripting and Programming - Applications – C867" << endl;
+   cout << "Course: Scripting and Programming - Applications - C867" << endl;
    cout << "Language used: C++" << endl;
    cout << "Student ID: 001218448" << endl;
    cout << "Name: Nicholas Boone" << endl << endl;;
 
-   Roster liveClassRoster;
+   Roster classRoster;
    int lengthOfArray = (sizeof(studentData) / sizeof(*studentData));
    int loopCount = 0;
 
@@ -94,27 +94,27 @@ int main() {
          }
       }
       //Add each student to the array
-      liveClassRoster.Add(tmpStudentID, tmpFirstName, tmpLastName, tmpEmailAddress, tmpAge, numDaysCompleteCourse.at(0), numDaysCompleteCourse.at(1), numDaysCompleteCourse.at(2), tmpDegree);
+      classRoster.Add(tmpStudentID, tmpFirstName, tmpLastName, tmpEmailAddress, tmpAge, numDaysCompleteCourse.at(0), numDaysCompleteCourse.at(1), numDaysCompleteCourse.at(2), tmpDegree);
       loopCount++;
    }
 
    // print all the info required for class
 
-   liveClassRoster.PrintAll();
+   classRoster.PrintAll();
 
-   liveClassRoster.PrintInvalidEmails();
+   classRoster.PrintInvalidEmails();
 
    cout << endl << "Students average days in class:" << endl;
    for (int i = 1; i < 6; i++) {
       string studentID = "A" + to_string(i);
-      liveClassRoster.PrintDaysInCourse(studentID);
+      classRoster.PrintDaysInCourse(studentID);
    }
 
-   liveClassRoster.PrintByDegreeProgram(SOFTWARE);
+   classRoster.PrintByDegreeProgram(SOFTWARE);
 
    cout << endl << "Remove student from array:" << endl;
-   liveClassRoster.Remove("A2");
-   liveClassRoster.Remove("A2");
+   classRoster.Remove("A2");
+   classRoster.Remove("A2");
 
    string userIn = "";
    while (userIn != "exit" && userIn != "Exit" && userIn != "EXIT") {
@@ -186,6 +186,7 @@ void Roster::PrintAll() {
    for (int i = 0; i < 5; i++) { // loop through the array of 5 items, dereferance the pointer and call the get funcions for all the information
       cout << i + 1 << "\t";
       classRosterArray[i]->Print();
+      
    }
 }
 

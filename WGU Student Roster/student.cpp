@@ -34,6 +34,14 @@ int Student::GetCompletionDates(int courseNumer) {
    return courseDays;
 }
 
+//int Student::GetDegreeProgram() {
+// If I create this def even as an empty function I get an error: 
+// error C4716:  'Student::GetDegreeProgram': must return a value.
+// however if I delete, comment it out or make it return void it will work. 
+// Since The directions require a virtual function but not a void i would rather 
+// return int so i can use the result in other places vs just printing to screen.
+//}
+
 //setter functions
 void Student::SetStudentID(string studentIdIn) {
    //cout << "setting studentID";
